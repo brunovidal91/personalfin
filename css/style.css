@@ -1,8 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300&display=swap');
+
 :root{
     --corPrincipal: #00a0b0;
     --BrancoPadrao: #fff;
     --corAside: #004853;
+    --corVerdeAgua: #57C0A8;
+    --fontEspecial: 'Inter', sans-serif;
     --fontPadrao: system-ui;
+    --vermelhoExpenses: firebrick;
 
 }
 
@@ -22,8 +27,9 @@ body{
         'D D';
     gap: 5px;
     padding: 5px;
-    grid-template-columns: 85vw auto;
+    grid-template-columns: auto 200px;
     grid-template-rows: 60px auto 15vh;
+    overflow-y: hidden;
 }
 
 /* -------------------- header ------------------ */
@@ -54,8 +60,8 @@ nav{
 
 .nav-list span{
     color: var(--BrancoPadrao);
-    font-family: var(--fontPadrao);
-    font-weight: bold;
+    font-family: var(--fontEspecial);
+
 
 }
 
@@ -78,6 +84,7 @@ main{
     display: flex;
     gap: 100px;
     justify-content: center;
+    flex-wrap: wrap;
 
 }
 
@@ -121,7 +128,7 @@ main{
 }
 
 .more{
-    background-color: green;
+    background-color: #57C0A8;
     color: #fff;
 }
 
@@ -129,7 +136,51 @@ main{
     width: 100%;
     height: 60%;
     border: 1px solid #ccc;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+
 }
+
+
+.table-container{
+    width: 90%;
+    height: 80%;
+    overflow-y: scroll;
+
+}
+
+
+
+
+table{
+    width: 100%;
+    text-align: center;
+    border: 1px solid #ccc;
+    height: 100%;
+    font-family: var(--fontEspecial);
+    font-size: .9em;
+
+}
+
+
+
+table thead th{
+    border: 1px solid #ccc;
+    padding: 8px;
+
+
+}
+
+table tbody td{
+    padding: 10px;
+}
+
+table tr:nth-child(even){
+    background-color: #99edf586;
+}
+
+
 
 
 /* -------------------- Aside ------------------ */
@@ -138,6 +189,239 @@ aside{
 
     background-color: var(--corAside);
     grid-area: C;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+}
+
+.list-main{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.7rem;
+    width: 100%;
+
+}
+
+
+.list-main li:first-child{
+    margin-top: 10px;
+}
+
+.list-main li a{
+    color: var(--BrancoPadrao);
+    font-family: var(--fontPadrao);
+}
+
+.list-item.menu{
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 50px;
+}
+
+.list-item.submenu{
+    font-size: 1em;
+    cursor: pointer;
+}
+
+
+.submenu{
+    margin-left: 20px;
+
+}
+
+.sub{
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    display: none;
+    margin-top: 10px;
+    width: 100%;
+ 
+    
+    
+
+}
+
+@keyframes active{
+   0%{
+    transform: rotateX(90deg);
+   }
+
+   50%{
+    transform: rotateX(-20deg) rotateY(5deg);
+    animation-timing-function: ease-in-out;
+   }
+
+   100%{
+    transform: rotateX(0);
+    animation-timing-function: ease-in-out;
+   }
+}
+
+.active{
+    display: flex;
+    animation: active .8s;
+}
+
+@keyframes modals{
+    from{
+        transform: translate(0, 0);
+    }
+
+    to{
+        transform: translate(-50% , -50%)
+    }
+}
+
+
+.modalEntMont{
+    position: absolute;
+    width: 450px;
+    height: 350px;
+    background-color: var(--BrancoPadrao);
+    border: none;
+    box-shadow: 0 0 5px 5px #ccc ;
+    top: 40%;
+    left: 45%;
+    transform: translate(-50%, -50%);
+    display: none;
+    animation: modals 0.5s ease-in-out;
+}
+
+.closebutton{
+    text-decoration: none;
+    border: 2px solid #ccc;
+    border-radius: 70%;
+    padding: 2px;
+    float: right;
+    background-color: var(--corVerdeAgua);
+    color: white;
+    margin: 0;
+}
+
+.form-EntMont{
+    margin-top: 70px;
+    width: 450px;
+    height: 250;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+    align-items: center;
+    justify-content: center;
+
+
+}
+
+.form-EntMont input, select{
+    padding: 8px;
+    font-family: var(--fontEspecial);
+    outline: none;
+}
+
+.form-EntMont input[type="submit"]{
+    width: 80px;
+    background-color: #57C0A8;
+    color: white;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    cursor: pointer;
+
+}
+
+.form-EntMont textarea{
+    resize: none;
+    padding: 5px;
+    outline: none;
+}
+
+
+.msg{
+    margin: 10px auto;
+    color: green;
+    font-family: var(--fontEspecial);
+    text-align: center;
+    position: fixed;
+    left: 170px;
+    
+}
+
+/* --------  DESPESA  ---------- */
+
+
+.modalExp{
+    position: absolute;
+    width: 450px;
+    height: 350px;
+    background-color: var(--BrancoPadrao);
+    border: none;
+    box-shadow: 0 0 5px 5px #ccc ;
+    top: 40%;
+    left: 45%;
+    transform: translate(-50%, -50%);
+    display: none;
+    animation: modals 0.5s ease-in-out;
+}
+
+.closebuttonExp{
+    text-decoration: none;
+    border: 2px solid #ccc;
+    border-radius: 70%;
+    padding: 2px;
+    float: right;
+    background-color: var(--vermelhoExpenses);
+    color: white;
+    margin: 0;
+}
+
+.form-Exp{
+    margin-top: 70px;
+    width: 450px;
+    height: 250;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+    align-items: center;
+    justify-content: center;
+
+
+}
+
+.form-Exp input, select{
+    padding: 8px;
+    font-family: var(--fontEspecial);
+    outline: none;
+}
+
+.form-Exp input[type="submit"]{
+    width: 80px;
+    background-color: var(--vermelhoExpenses);
+    color: white;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    cursor: pointer;
+
+}
+
+.form-Exp textarea{
+    resize: none;
+    padding: 5px;
+    outline: none;
+}
+
+
+.msgExp{
+    margin: 10px auto;
+    color: green;
+    font-family: var(--fontEspecial);
+    text-align: center;
+    position: fixed;
+    left: 170px;
+    
 }
 
 
