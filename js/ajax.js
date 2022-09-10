@@ -20,7 +20,8 @@ $(".form-EntMont").submit(function(e){
                 reco: $("#reco").val(),
                 amount: $("#amount").val(),
                 obs: $("#obs").val(),
-                dif: $("#dif").val()
+                dif: $("#dif").val(),
+                id_user: $('#id_user').val()
             },
 
             success: (function(result){
@@ -51,7 +52,8 @@ $(".form-Exp").submit(function(e){
                 reco: $("#reco-Exp").val(),
                 amount: $("#amount-Exp").val(),
                 obs: $("#obs-Exp").val(),
-                dif: $("#dif-Exp").val()
+                dif: $("#dif-Exp").val(),
+                id_user: $('#id_user').val()
             },
 
             success: (function(result){
@@ -60,6 +62,7 @@ $(".form-Exp").submit(function(e){
                 list();
                 expMonth();
                 expense();
+
 
 
             }),
@@ -120,3 +123,50 @@ function amBilled(){
         }
     });
 }
+
+$("#form-login").on('submit', (e) => {
+    e.preventDefault()
+    $.ajax({
+        url: './secure.php',
+        type: 'POST',
+        data: {
+            email: $('#email').val(),
+            pass: $('#pass').val()
+        },
+        success: function(result){
+            $('.msg').html(result);
+            $('.msg').style.color = "green";
+        },
+
+        error: function(result){
+            $('.msg').html(result);
+        }
+    });
+})
+
+$('#form-edit-user').on('submit', (e) => {
+    e.preventDefault();
+
+    $.ajax({
+        url: './edit.php',
+        type: 'POST',
+        data: {
+            name: $('#name').val(),
+            lastname: $('#lastname').val(),
+            email: $('#email').val(),
+            pass1: $('#pass1').val(),
+            pass2: $('#pass2').val(),
+            id: $('#id').val()
+        },
+
+    success: function(result){
+            $('.msgEdit').html(result);
+
+        },
+    error: function(result){
+            $('.msgEdit').html(result);
+            $('.msgEdit').css('color', '#ff0000')
+        }
+
+    });
+});
