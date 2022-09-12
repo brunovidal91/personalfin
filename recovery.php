@@ -20,7 +20,7 @@ if(count($res) > 0){
     $head = 'FROM: ' .$system_email;
 
 
-    @mail($destinatario, $assunto, $mensagem, $cabecalhos);
+    @mail($to, $subject, $msg, $head);
 
 
    echo '<span style="color: rgb(19, 235, 19)">Please check your inbox</span>';
