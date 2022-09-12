@@ -15,7 +15,7 @@ echo <<<HTML
 <small><table>
 <thead>
 <tr>
-<th colspan="1">Title</th>
+<th colspan="2">Title</th>
 <th>Date</th>
 <th>Amount</th>
 <th>Obs</th>
@@ -43,7 +43,8 @@ foreach($res as $item){
     //<a href='id=?{$id}'>L</a> 
 echo <<<HTML
 <tr>
-<td><img src="../img/seta-para-{$img}.png">  {$item['title']}</td>
+<td><img src="../img/seta-para-{$img}.png"></td>
+<td>{$item['title']}</td>
 <td>{$newdata}</td>
 <td>R$ {$item['amountf']}</td>
 <td>{$item['obs']}</td>
