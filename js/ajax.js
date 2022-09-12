@@ -124,25 +124,7 @@ function amBilled(){
     });
 }
 
-$("#form-login").on('submit', (e) => {
-    e.preventDefault()
-    $.ajax({
-        url: './secure.php',
-        type: 'POST',
-        data: {
-            email: $('#email').val(),
-            pass: $('#pass').val()
-        },
-        success: function(result){
-            $('.msg').html(result);
-            $('.msg').style.color = "green";
-        },
 
-        error: function(result){
-            $('.msg').html(result);
-        }
-    });
-})
 
 $('#form-edit-user').on('submit', (e) => {
     e.preventDefault();
@@ -161,6 +143,11 @@ $('#form-edit-user').on('submit', (e) => {
 
     success: function(result){
             $('.msgEdit').html(result);
+            
+            if(($('#pass1').val() == $('#pass2').val()) && $('#pass1').val() != "" && $('#pass2').val() != "" ){
+                $('#drop').html($('#name').val() + ' ' + $('#lastname').val());
+            }
+            
 
         },
     error: function(result){
@@ -170,3 +157,5 @@ $('#form-edit-user').on('submit', (e) => {
 
     });
 });
+
+

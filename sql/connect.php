@@ -5,6 +5,9 @@ $bd = 'fin';
 $user = 'root';
 $pass = "";
 
+$system_name = 'PersonalFin';
+$system_email = 'brunovidal.sky@gmail.com';
+
 date_default_timezone_set('America/Sao_Paulo');
 
 try{

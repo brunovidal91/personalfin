@@ -9,7 +9,7 @@ require_once("protect.php");
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>PersonalFin - Dashboard</title>
+        <title><?php echo $system_name .' - Dashboard' ?></title>
         <link rel="stylesheet" href="../css/style.css"></link>
         <link rel="shortcut icon" href="../img/secure-payment.png" >
     </head>
@@ -19,9 +19,13 @@ require_once("protect.php");
             <nav>
                 <div class="logo"><img src="../img/secure-payment.png" width="50px"></div>
                 <div class="nav-list">
-                    <span id="drop"><?php echo @$_SESSION['name'] .' '. @$_SESSION['lastname'] ?>
+                    <span class="drop" id="drop"><?php echo @$_SESSION['name'] .' '. @$_SESSION['lastname'] ?></span>
+                    <a href="#!" class="mobile-menu">
+                        <div class="line"></div>
+                        <div class="line"></div>
+                        <div class="line"></div>
 
-                </span>
+                    </a>
                 
 
                 </div>
@@ -54,20 +58,20 @@ require_once("protect.php");
             <ul class="list-main">
                 <li><a class="list-item menu" id="menu1"><span class="sinal1">+</span>Profit</a>
                     <ul class="list-main sub" id="submenu1">
-                        <li><a class="list-item submenu" id="entradaAvulsa">Single Profit</a></li>
+                        <li><a class="list-item submenu singleProfit" id="singleProfit">Single Profit</a></li>
                         <li><a class="list-item submenu">Fixed Profit</a></li>
                     </ul>
                 </li>
                 <li><a class="list-item menu" id="menu2"><span class="sinal2">+</span>Expenditure</a>
                     <ul class="list-main sub" id="submenu2">
-                        <li><a class="list-item submenu" id="despesaAvulsa">Single Expenditure</a></li>
+                        <li><a class="list-item submenu singleExpenditure" id="singleExpenditure">Single Expenditure</a></li>
                         <li><a class="list-item submenu">Fixed Expenditure</a></li>
                     </ul>
                 </li>
             </ul>
         </aside>
         <footer>
-
+            <div class="credits"><span>Developed by Bruno Vidal</span></div>
         </footer>
 
 
@@ -119,7 +123,7 @@ require_once("protect.php");
         </div>
 
         <div class="modalEditUser">
-            <div class="msgEdit"></div>
+            <div class="msgEdit">MSG</div>
             <form action="edit.php" method="POST" class="form-edit-user" id="form-edit-user">
                 <div>
                     <input type="text" id="name" value="<?php echo $_SESSION['name'] ?>">
@@ -138,6 +142,20 @@ require_once("protect.php");
                 <input type="submit" value="Save">
             </form>
             <div class="closeButton-edit-user">X</div>
+        </div>
+
+        <div class="modalMobile">
+
+            <div class="insert-list">
+                <a  href="#!" class="singleProfitMobile"><img src="../img/joins.png" width="20px"> Single Profit</a>
+                <a href="#!" class="singleExpenditureMobile"><img src="../img/expenses.png" width="20px"> Single Expenditure</a>
+            </div>
+
+            <div class="options-list">
+                <a href="#!" class="editUserButtonMobile">Edit</a>
+                <a href="logout.php" class="logoutButton">Logout</a>
+            </div>
+
         </div>
 
         <script src="http://code.jquery.com/jquery-3.6.1.min.js"></script>
