@@ -13,7 +13,7 @@ require_once("sql/connect.php");
     <title><?php echo $system_name .' - Login Page' ?></title>
 </head>
 <body>
-    <div class="login-img"><img src="img/secure-payment.png" width="100px"/><span>PersonalFin</span></div>
+    <div class="login-img"><img src="img/secure-payment.png" width="100px"/><span><?php echo $system_name?></span></div>
     <div class="form-container-login">
         <form action="secure.php" method="POST" id="form-login">
             <input type="email" placeholder="email..." name="email" id="email" autofocus autocomplete="on">
