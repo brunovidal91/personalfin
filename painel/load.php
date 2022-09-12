@@ -12,13 +12,14 @@ $res = $query->fetchAll(PDO::FETCH_ASSOC);
 
 echo <<<HTML
 
-<table>
+<small><table>
 <thead>
 <tr>
-<th colspan="2">Title</th>
+<th colspan="1">Title</th>
 <th>Date</th>
 <th>Amount</th>
 <th>Obs</th>
+<th>Actions</th>
 </tr>
 </thead>
 <tbody>
@@ -29,6 +30,7 @@ HTML;
 
 foreach($res as $item){
     $data = $item['date'];
+    $id = $item['id'];
     $newdata = implode("/", array_reverse (explode('-', $data)));
 
     if($item['dif'] == 1){
@@ -38,19 +40,21 @@ foreach($res as $item){
         $img = 'baixo';
     }
 
-
+    //<a href='id=?{$id}'>L</a> 
 echo <<<HTML
 <tr>
-<td><img src="../img/seta-para-{$img}.png"></td>
-<td>{$item['title']}</td>
+<td><img src="../img/seta-para-{$img}.png">  {$item['title']}</td>
 <td>{$newdata}</td>
 <td>R$ {$item['amountf']}</td>
 <td>{$item['obs']}</td>
+<td>
+    <a href='#!' onclick="deleteItem('{$id}', '{$item['title']}')"title="delete" id="delete">
+        <img src='../img/delete.png' width="18"></a></td>
 </tr>
 HTML;
 }
 echo <<<HTML
 </tbody>
 </table>
-
+</small>
 HTML;

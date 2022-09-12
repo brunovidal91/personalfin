@@ -20,6 +20,8 @@ const modalMobile = document.querySelector('.modalMobile');
 const editUserButtonMobile = document.querySelector('.editUserButtonMobile');
 const despesaAvulsaMobile = document.querySelector(".singleExpenditureMobile");
 const entradaAvulsaMobile = document.querySelector(".singleProfitMobile");
+const deleteLink = document.querySelector('#delete');
+const editLink = document.querySelector('#edit');
 
 
 
@@ -83,4 +85,33 @@ entradaAvulsaMobile.addEventListener('click', () => {
     modal.style.display = 'block';
     modalMobile.classList.toggle('activeMobileModal');
 });
+
+
+function list(){
+    $.ajax({
+        url: 'load.php',
+        success: function(result){
+            $('.table-container').html(result)
+        }
+    })
+}
+
+function exc(id){
+    $.ajax({
+        url: 'delete.php',
+        type: 'POST',
+        data: {id: id},
+        success: function(){
+            list()
+        }
+    })
+}
+
+function deleteItem(id, name){
+   const resp = confirm('Your really want to exclude the item: ' + name);
+
+    if(resp == true){
+        exc(id);
+    }
+}
 
