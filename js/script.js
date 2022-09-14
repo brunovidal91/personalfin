@@ -115,3 +115,10 @@ function deleteItem(id, name){
     }
 }
 
+/*
+document.onclick = function(e) {
+    if(e.target.id !== 'modalMobile' && e.target.id !== 'mobile-menu'){
+        modalMobile.classList.remove('activeMobileModal')
+    }
+};*/
+

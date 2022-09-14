@@ -20,7 +20,7 @@ require_once("protect.php");
                 <div class="logo"><img src="../img/secure-payment.png" width="50px"></div>
                 <div class="nav-list">
                     <span class="drop" id="drop"><?php echo @$_SESSION['name'] .' '. @$_SESSION['lastname'] ?></span>
-                    <a href="#!" class="mobile-menu">
+                    <a href="#!" class="mobile-menu" id="mobile-menu">
                         <div class="line"></div>
                         <div class="line"></div>
                         <div class="line"></div>
@@ -144,7 +144,7 @@ require_once("protect.php");
             <div class="closeButton-edit-user">X</div>
         </div>
 
-        <div class="modalMobile">
+        <div class="modalMobile" id="modalMobile">
 
             <div class="insert-list">
                 <a  href="#!" class="singleProfitMobile"><img src="../img/joins.png" width="20px"> Single Profit</a>
