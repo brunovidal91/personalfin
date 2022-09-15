@@ -26,6 +26,8 @@ require_once("protect.php");
                         <div class="line"></div>
 
                     </a>
+
+
                 
 
                 </div>
@@ -82,7 +84,7 @@ require_once("protect.php");
             <div class="msg"></div>
             <form method="POST" class="form-EntMont">
                 <input type="text" name="title" placeholder="Title" id="title">
-                <input type="date" name="date" id="date">
+                <input type="date" name="date" id="date" value="<?php echo date('Y-m-d') ?>">
                 <select name="reco" id="reco">
                     <option value="s">Single</option>
                     <option value="w">Weekly</option>
@@ -106,7 +108,7 @@ require_once("protect.php");
             <div class="msgExp"></div>
             <form method="POST" class="form-Exp">
                 <input type="text" name="title_Exp" placeholder="Title" id="title-Exp">
-                <input type="date" name="date_Exp" id="date-Exp">
+                <input type="date" name="date_Exp" id="date-Exp" value="<?php echo date('Y-m-d'); ?>">
                 <select name="reco_Exp" id="reco-Exp">
                     <option value="s">Single</option>
                     <option value="w">Weekly</option>
