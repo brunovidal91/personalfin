@@ -16,7 +16,7 @@ echo <<<HTML
 <thead>
 <tr>
 <th colspan="2">Title</th>
-<th>Date</th>
+<th>When</th>
 <th>Amount</th>
 <th>Obs</th>
 <th>Actions</th>

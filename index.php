@@ -24,7 +24,6 @@ require_once("sql/connect.php");
 
         <a href="mailto:brunovidal.sky@gmail.com" class="mail-to-acess">Request Access</a>
     </div>
-    <div class="msg">teste</div>
 
     <div class="modalRecovery">
         <form action="recovery.php" method="POST" id="form-recovery">

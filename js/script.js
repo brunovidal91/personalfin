@@ -25,6 +25,10 @@ const editLink = document.querySelector('#edit');
 
 
 
+
+
+
+
 menu1.addEventListener('click', () => {
     submenu1.classList.toggle("active");
 
@@ -87,6 +91,47 @@ entradaAvulsaMobile.addEventListener('click', () => {
 });
 
 
+function expMonth(){
+    $.ajax({
+        url: 'expMonth.php',
+
+        success: function(result){
+            $(".expMonth").html(result);
+        }
+    });
+}
+
+function expense(){
+    $.ajax({
+        url: 'expense.php',
+        
+        success: function(result){
+            $(".amExpMonth").html(result);
+        }
+    });
+}
+
+function billedMonth(){
+    $.ajax({
+        url: 'billedMonth.php',
+
+        success: function(result){
+            $(".billedMonth").html(result);
+        }
+    });
+}
+
+function amBilled(){
+    $.ajax({
+        url: 'amBilled.php',
+
+        success: function(result){
+            $(".amBilled").html(result);
+        }
+    });
+}
+ 
+
 function list(){
     $.ajax({
         url: 'load.php',
@@ -102,16 +147,22 @@ function exc(id){
         type: 'POST',
         data: {id: id},
         success: function(){
-            list()
+            list();
+            expense();
+            expMonth();
+            amBilled();
+            billedMonth();
+
         }
     })
 }
 
 function deleteItem(id, name){
-   const resp = confirm('Your really want to exclude the item: ' + name);
+   const resp = confirm("Do you really want to delete this item:\n--- " + name + " --- ?");
 
     if(resp == true){
         exc(id);
+
     }
 }
 

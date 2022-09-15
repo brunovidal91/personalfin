@@ -80,6 +80,8 @@ nav{
     cursor:default;
     padding: 10px;
     display: none;
+    transition: .5s;
+    
 
 }
 
@@ -102,7 +104,7 @@ nav{
 @keyframes drop{
     from{
 
-        transform: translateY(-50px);
+        transform: translateY(-20px);
     }
 
     to{
@@ -112,7 +114,7 @@ nav{
 
 .activeModal{
     display: block;
-    animation: drop .3s;
+    animation: drop .5s;
 }
 
 
