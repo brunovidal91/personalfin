@@ -1,6 +1,6 @@
 <?php
-require_once("../sql/connect.php");
 require_once("protect.php");
+require_once("../sql/connect.php");
 ?>
 
 
