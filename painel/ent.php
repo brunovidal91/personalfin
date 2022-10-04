@@ -17,3 +17,6 @@ $query->bindValue(":reco", "$reco");
 $query->bindValue(":amount", "$amount");
 $query->bindValue(":obs", "$obs");
 $query->execute();
+
+$con = null;
+$query = null;

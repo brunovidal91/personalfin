@@ -12,3 +12,6 @@ $res = $query->fetchAll(PDO::FETCH_ASSOC);
 
 
 echo 'R$ '. $res[0]['am'];
+
+$con = null;
+$query = null;

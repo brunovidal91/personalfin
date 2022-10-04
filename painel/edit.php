@@ -32,6 +32,11 @@ else if(count($res) > 0 && $res[0]['id'] != $id ){
     $alt->execute();
 
     echo "<span style='color: rgb(19, 235, 19)'> change made successfully</span>";
+
+    $con = null;
+    $query = null;
 }
+
+
 
 

@@ -1,9 +1,12 @@
 <?php
+$url = parse_url(getenv("CLEARDB_DATABASE_URL"));
+$host = $url['host'];
+$bd = substr($url['path'], 1);
+$user = $url['user'];
+$pass = $url['pass'];
 
-$host = 'us-cdbr-east-06.cleardb.net';
-$bd = 'heroku_3865486cdbf14f1';
-$user = 'b21a8d87c64b93';
-$pass = "a8eb7e18";
+$active_group = 'default';
+$query_builder = TRUE;
 
 $system_name = 'Personal Balance';
 $system_email = 'brunovidal.sky@gmail.com';

@@ -24,6 +24,8 @@ if(count($res) > 0){
 
 
    echo '<span style="color: rgb(19, 235, 19)">Please check your inbox</span>';
+   $con = null;
+   $query = null;
 
 }else{
     echo '<span style="color: #FF6347">We could not find this email address</span>';

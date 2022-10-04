@@ -59,3 +59,8 @@ echo <<<HTML
 </table>
 </small>
 HTML;
+
+
+$con = null;
+$query = null;
+
