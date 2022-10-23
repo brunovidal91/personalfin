@@ -21,9 +21,9 @@ if(strlen($title) != 0 AND strlen($amount) != 0){
     $query->execute();
 
     echo "<span style='color: rgb(19, 235, 19)'>insert made successfully</span>";
-    
+
 }else {
-    echo '<span style="color: #ff0000 ">There is required fills empty</span>';
+    echo '<span style="color: #ff0000 ">There are required fields empty</span>';
 }
 
 
