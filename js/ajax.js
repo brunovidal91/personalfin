@@ -57,7 +57,7 @@ $(".form-Exp").submit(function(e){
             },
 
             success: (function(result){
-                $(".msgExp").html("Insert success!");
+                $(".msgExp").html(result);
                 $(".form-Exp")[0].reset();
                 list();
                 expMonth();
