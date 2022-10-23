@@ -496,6 +496,9 @@ aside{
     text-align: center;
     position: fixed;
     left: 170px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     
 }
 
