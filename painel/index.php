@@ -92,7 +92,7 @@ require_once("../sql/connect.php");
                     <option value="a">Annual</option>
                     <option value="o">Other</option>
                 </select>
-                <input type="number" step="0.01" name="amount" placeholder="R$ 0,00" id="amount" required>
+                <input type="number" step="0.01" name="amount" placeholder="R$ 0,00" id="amount">
                 <textarea name="obs" rows="4" cols="50" maxlength="255" placeholder="Observation" id="obs"></textarea>
                 <input type="hidden" name="dif" value="1" id="dif">
                 <input type="hidden" name="id_user" value="<?php echo $_SESSION['id'] ?>" id="id_user">
@@ -116,7 +116,7 @@ require_once("../sql/connect.php");
                     <option value="a">Annual</option>
                     <option value="o">Other</option>
                 </select>
-                <input type="number" step="0.01" name="amount_Exp" placeholder="R$ 0,00" id="amount-Exp" required>
+                <input type="number" step="0.01" name="amount_Exp" placeholder="R$ 0,00" id="amount-Exp">
                 <textarea name="obs_Exp" rows="4" cols="50" maxlength="255" placeholder="Observation" id="obs-Exp"></textarea>
                 <input type="hidden" name="dif_Exp" value="0" id="dif-Exp">
                 <input type="hidden" name="id_user" value="<?php echo $_SESSION['id'] ?>" id="id_user">
