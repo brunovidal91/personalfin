@@ -83,7 +83,7 @@ require_once("../sql/connect.php");
 
             <div class="msg"></div>
             <form method="POST" class="form-EntMont">
-                <input type="text" name="title" placeholder="Title" id="title">
+                <input type="text" name="title" placeholder="Title" id="title" required autofocus>
                 <input type="date" name="date" id="date" value="<?php echo date('Y-m-d') ?>">
                 <select name="reco" id="reco">
                     <option value="s">Single</option>
@@ -92,7 +92,7 @@ require_once("../sql/connect.php");
                     <option value="a">Annual</option>
                     <option value="o">Other</option>
                 </select>
-                <input type="number" step="0.01" name="amount" placeholder="R$ 0,00" id="amount">
+                <input type="number" step="0.01" name="amount" placeholder="R$ 0,00" id="amount" required>
                 <textarea name="obs" rows="4" cols="50" maxlength="255" placeholder="Observation" id="obs"></textarea>
                 <input type="hidden" name="dif" value="1" id="dif">
                 <input type="hidden" name="id_user" value="<?php echo $_SESSION['id'] ?>" id="id_user">
@@ -107,7 +107,7 @@ require_once("../sql/connect.php");
 
             <div class="msgExp"></div>
             <form method="POST" class="form-Exp">
-                <input type="text" name="title_Exp" placeholder="Title" id="title-Exp">
+                <input type="text" name="title_Exp" placeholder="Title" id="title-Exp" required autofocus>
                 <input type="date" name="date_Exp" id="date-Exp" value="<?php echo date('Y-m-d'); ?>">
                 <select name="reco_Exp" id="reco-Exp">
                     <option value="s">Single</option>
@@ -116,7 +116,7 @@ require_once("../sql/connect.php");
                     <option value="a">Annual</option>
                     <option value="o">Other</option>
                 </select>
-                <input type="number" step="0.01" name="amount_Exp" placeholder="R$ 0,00" id="amount-Exp">
+                <input type="number" step="0.01" name="amount_Exp" placeholder="R$ 0,00" id="amount-Exp" required>
                 <textarea name="obs_Exp" rows="4" cols="50" maxlength="255" placeholder="Observation" id="obs-Exp"></textarea>
                 <input type="hidden" name="dif_Exp" value="0" id="dif-Exp">
                 <input type="hidden" name="id_user" value="<?php echo $_SESSION['id'] ?>" id="id_user">

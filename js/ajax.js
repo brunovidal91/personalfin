@@ -25,7 +25,7 @@ $(".form-EntMont").submit(function(e){
             },
 
             success: (function(result){
-                $(".msg").html("Insert success!");
+                $(".msg").html(result);
                 $(".form-EntMont")[0].reset();
                 list();
                 billedMonth();
